@@ -1,0 +1,125 @@
+﻿<Window x:Class="WordBlitzPlayer.Calibration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordBlitzPlayer"
+        mc:Ignorable="d"
+        Title="Calibration" Name="CalibrationWindow" Height="auto" Width="auto"  MaxWidth="500" MaxHeight="573.5294"
+        WindowStartupLocation="Manual"
+        AllowsTransparency="True" WindowStyle="None" Background="Transparent">
+
+    <Grid Name="CalibrationGrid" Background="Transparent" MaxWidth="1000" MaxHeight="1147.06">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="col1" Width="85"></ColumnDefinition>
+            <ColumnDefinition Name="col2" Width="85"></ColumnDefinition>
+            <ColumnDefinition Name="col3" Width="85"></ColumnDefinition>
+            <ColumnDefinition Name="col4" Width="85"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Name="row1" Height="85"></RowDefinition>
+            <RowDefinition Name="row2" Height="85"></RowDefinition>
+            <RowDefinition Name="row3" Height="85"></RowDefinition>
+            <RowDefinition Name="row4" Height="85"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Name="Banner" Grid.ColumnSpan="4" Grid.Row="0" Background="White" BorderBrush="Black" BorderThickness="2" MouseDown="Border_MouseDown">
+            <Grid>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Orientation="Horizontal">
+                    <Button Name="ResizeUp" Width="25" Height="25" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Content="+" Click="ResizeUp_Click"></Button>
+                    <Button Name="ResizeDown" Width="25" Height="25" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Content="-" Click="ResizeDown_Click"></Button>
+                    <!--<Slider Value="345" Minimum="300" Maximum="500" TickFrequency="100" ></Slider>
+                    <Slider ></Slider>-->
+                </StackPanel>
+                <Button Name="CalibrateButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Calibrate" Click="CalibrateButton_Click"></Button>
+                <Button Name="CancelButton" HorizontalAlignment="Right" VerticalAlignment="Top" Width="15" Height="15" Content="X" FontSize="8" Click="CancelButton_Click"></Button>
+            </Grid>
+
+        </Border>
+        
+        <Border Background="White" Opacity="0.1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="4" BorderBrush="Blue" BorderThickness="4" MouseDown="Border_MouseDown"></Border>
+        
+        <Border Grid.ColumnSpan="4" Grid.RowSpan="4" Grid.Row="1" BorderBrush="Blue" BorderThickness="4" MouseDown="Border_MouseDown"></Border>
+
+        <Border Grid.Column="0" Grid.RowSpan="4" Grid.Row="1" BorderBrush="AliceBlue" BorderThickness="0,0,2,0"></Border>
+        <Border Grid.Column="1" Grid.RowSpan="4" Grid.Row="1" BorderBrush="AliceBlue" BorderThickness="0,0,2,0"></Border>
+        <Border Grid.Column="2" Grid.RowSpan="4" Grid.Row="1" BorderBrush="AliceBlue" BorderThickness="0,0,2,0"></Border>
+
+        <Border Grid.ColumnSpan="4" Grid.Row="1" BorderBrush="AliceBlue" BorderThickness="0,0,0,2"></Border>
+        <Border Grid.ColumnSpan="4" Grid.Row="2" BorderBrush="AliceBlue" BorderThickness="0,0,0,2"></Border>
+        <Border Grid.ColumnSpan="4" Grid.Row="3" BorderBrush="AliceBlue" BorderThickness="0,0,0,2"></Border>
+
+        <!--<Border Grid.Column="0" Grid.Row="1" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter1"/>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="1" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter2"/>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="1" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter3"/>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="1" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter4"/>
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="2" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter5"/>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="2" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter6"/>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="2" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter7"/>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="2" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter8"/>
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="3" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter9"/>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="3" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter10"/>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="3" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter11"/>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="3" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter12"/>
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="4" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter13"/>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="4" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter14"/>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="4" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter15"/>
+        </Border>
+        <Border Grid.Column="3" Grid.Row="4" Margin="25" BorderBrush="Black" BorderThickness="2">
+            <Rectangle Name="Letter16"/>
+        </Border>-->
+        <Border Name="Letter1" Grid.Column="0" Grid.Row="1" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter2" Grid.Column="1" Grid.Row="1" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter3" Grid.Column="2" Grid.Row="1" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter4" Grid.Column="3" Grid.Row="1" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+
+        <Border Name="Letter5" Grid.Column="0" Grid.Row="2" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter6" Grid.Column="1" Grid.Row="2" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter7" Grid.Column="2" Grid.Row="2" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter8" Grid.Column="3" Grid.Row="2" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+
+        <Border Name="Letter9" Grid.Column="0" Grid.Row="3" Width="39" Height="39"   BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter10" Grid.Column="1" Grid.Row="3" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter11" Grid.Column="2" Grid.Row="3" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter12" Grid.Column="3" Grid.Row="3" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+
+        <Border Name="Letter13" Grid.Column="0" Grid.Row="4" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter14" Grid.Column="1" Grid.Row="4" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter15" Grid.Column="2" Grid.Row="4" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+        <Border Name="Letter16" Grid.Column="3" Grid.Row="4" Width="39" Height="39"  BorderBrush="Black" BorderThickness="2"></Border>
+
+    </Grid>
+</Window>
